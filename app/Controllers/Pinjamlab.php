@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Controllers\PinjamlabModel as ControllersPinjamlabModel;
 use App\Models\PinjamlabModel;
 
-class pinjamlab extends BaseController
+class Pinjamlab extends BaseController
 {
     protected $pinjamlabModel;
     public function __construct()
@@ -16,8 +17,8 @@ class pinjamlab extends BaseController
 
 
         $data = [
-            'title' => 'Data ICT-BIDUS',
-            'pinjamlab' => $this->PinjamlabModel->getpinjamlab()
+            'title' => 'Data Pinjam Lab',
+            'pinjamlab' => $this->pinjamlabModel->getPinjamlab()
 
         ];
 
@@ -30,7 +31,7 @@ class pinjamlab extends BaseController
     {
         // session();
         $data = [
-            'title' => 'Data Bidus | Tambah Data',
+            'title' => 'Data Lab | Tambah Data',
             'validation' => \Config\Services::validation()
 
         ];
@@ -118,7 +119,7 @@ class pinjamlab extends BaseController
         }
 
 
-        $this->PinjamlabModel->save([
+        $this->pinjamlabModel->save([
             'nama' => $this->request->getVar('nama'),
             'nim' => $this->request->getVar('nim'),
             'kondisi' => $this->request->getVar('kondisi'),
@@ -126,7 +127,7 @@ class pinjamlab extends BaseController
             'tanggal_pengembalian' => $this->request->getVar('tanggal_pengembalian'),
             'nama_lab' => $this->request->getVar('nama_lab'),
             'keperluan' => $this->request->getVar('keperluan'),
-            'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
+            'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman')
         ]);
 
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan');
@@ -136,7 +137,7 @@ class pinjamlab extends BaseController
 
     public function delete($id)
     {
-        $this->PinjamlabModel->delete($id);
+        $this->pinjamlabModel->delete($id);
         session()->setFlashdata('pesan', 'Data Berhasil dihapus');
         return redirect()->to('/pinjamlab');
     }
@@ -144,9 +145,9 @@ class pinjamlab extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Data Bidus | Ubah Data',
+            'title' => 'Data Lab | Ubah Data',
             'validation' => \Config\Services::validation(),
-            'pinjamlab' => $this->PinjamlabModel->getpinjamlab($id)->getRow()
+            'pinjamlab' => $this->pinjamlabModel->getpinjamlab($id)->getRow()
 
         ];
         return view('pinjamlab/edit', $data);
@@ -156,13 +157,14 @@ class pinjamlab extends BaseController
     {
         $id = $this->request->getVar('id');
         $this->PinjamlabModel->save([
-            'id' => $id,
             'nama' => $this->request->getVar('nama'),
             'nim' => $this->request->getVar('nim'),
             'kondisi' => $this->request->getVar('kondisi'),
             'tanggal_peminjaman' => $this->request->getVar('tanggal_peminjaman'),
-            'barang_pinjam' => $this->request->getVar('barang_pinjam'),
-            'foto' => $this->request->getVar('foto')
+            'tanggal_pengembalian' => $this->request->getVar('tanggal_pengembalian'),
+            'nama_lab' => $this->request->getVar('nama_lab'),
+            'keperluan' => $this->request->getVar('keperluan'),
+            'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
             
         ]);
 
