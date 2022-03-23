@@ -35,6 +35,8 @@ $routes->get('/', 'Pages::index');
 
 
 #PEMINJAMAN LAB
+$routes->delete('/pinjamlab/(:num)', 'pinjamlab::delete/$1');
+$routes->get('/pinjamlab/edit/(:segment)', 'pinjamlab::edit/$1');
 
 
 /*
