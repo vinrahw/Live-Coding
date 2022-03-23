@@ -47,7 +47,7 @@ class Pinjamlab extends BaseController
                 'rules' => 'required|is_unique[pinjamlab.nama]',
                 'errors' => [
                     'required' => '{field} pinjamlab harus diisi',
-                    'is_unique' => '{field} pinjamlab sudah terdaftar'
+
                 ]
             ],
 
@@ -108,16 +108,15 @@ class Pinjamlab extends BaseController
                 ]
             ]
 
-
-
-
-
-
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('/pinjamlab/create')->withInput()->with('validation', $validation);
         }
 
+        $fileFoto = $this->request->getFile('foto');
+        $fileFoto->move('img');
+
+        $namafoto = $fileFoto->getName();
 
         $this->pinjamlabModel->save([
             'nama' => $this->request->getVar('nama'),
@@ -129,7 +128,7 @@ class Pinjamlab extends BaseController
             'keperluan' => $this->request->getVar('keperluan'),
             'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
             'barang_pinjam' => $this->request->getVar('barang_pinjam'),
-            'foto' => $this->request->getVar('foto')
+            'foto' => $namafoto
         ]);
 
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan');

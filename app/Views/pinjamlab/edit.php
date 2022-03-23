@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h4 class="my-3">Form Tambah Data</h4>
+            <h4 class="my-3">Form Update Data</h4>
 
             <form action="/pinjamlab/edit" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>

@@ -1097,3 +1097,33 @@ CRITICAL - 2022-03-23 04:18:50 --> You have an error in your SQL syntax; check t
 #10 C:\xampp\htdocs\Live-Coding\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #11 C:\xampp\htdocs\Live-Coding\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #12 {main}
+ERROR - 2022-03-23 04:22:45 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 3
+CRITICAL - 2022-03-23 04:22:45 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 3
+#0 C:\xampp\htdocs\Live-Coding\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Live-Coding\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Live-Coding\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Live-Coding\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Live-Coding\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Live-Coding\app\Models\PinjamlabModel.php(21): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Live-Coding\app\Controllers\Pinjamlab.php(152): App\Models\PinjamlabModel->getPinjamlab('3')
+#7 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(832): App\Controllers\Pinjamlab->edit('3')
+#8 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjamlab))
+#9 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Live-Coding\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Live-Coding\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-03-23 04:48:30 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 3
+CRITICAL - 2022-03-23 04:48:30 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':0:' at line 3
+#0 C:\xampp\htdocs\Live-Coding\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Live-Coding\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Live-Coding\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Live-Coding\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Live-Coding\system\Model.php(728): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\Live-Coding\app\Models\PinjamlabModel.php(21): CodeIgniter\Model->__call('getWhere', Array)
+#6 C:\xampp\htdocs\Live-Coding\app\Controllers\Pinjamlab.php(151): App\Models\PinjamlabModel->getPinjamlab('1')
+#7 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(832): App\Controllers\Pinjamlab->edit('1')
+#8 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pinjamlab))
+#9 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\Live-Coding\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\Live-Coding\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
