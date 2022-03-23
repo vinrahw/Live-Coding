@@ -87,7 +87,7 @@ class Pinjamlab extends BaseController
                 ]
             ],
 
-            'waktu_pemijaman' => [
+            'waktu_peminjaman' => [
                 'rules' => 'required[pinjamlab.waktu_pemijaman]',
                 'errors' => [
                     'required' => '{field} pinjamlab harus diisi'
@@ -102,11 +102,11 @@ class Pinjamlab extends BaseController
             ],
 
             'foto' => [
-                'rules' => 'required[pinjamlab.foto]',
+                'rules' => 'uploaded[foto]|is_image[foto]|mime_in[foto, image/jpg, image/jpeg, image/png]',
                 'errors' => [
-                    'required' => '{field} pinjamlab harus diisi'
+                    'uploaded' => 'foto pinjamlab harus diisi'
                 ]
-            ],
+            ]
 
 
 
@@ -127,7 +127,9 @@ class Pinjamlab extends BaseController
             'tanggal_pengembalian' => $this->request->getVar('tanggal_pengembalian'),
             'nama_lab' => $this->request->getVar('nama_lab'),
             'keperluan' => $this->request->getVar('keperluan'),
-            'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman')
+            'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
+            'barang_pinjam' => $this->request->getVar('barang_pinjam'),
+            'foto' => $this->request->getVar('foto')
         ]);
 
         session()->setFlashdata('pesan', 'Data Berhasil Ditambahkan');
@@ -156,7 +158,7 @@ class Pinjamlab extends BaseController
     public function update($id)
     {
         $id = $this->request->getVar('id');
-        $this->PinjamlabModel->save([
+        $this->pinjamlabModel->save([
             'nama' => $this->request->getVar('nama'),
             'nim' => $this->request->getVar('nim'),
             'kondisi' => $this->request->getVar('kondisi'),
@@ -165,6 +167,8 @@ class Pinjamlab extends BaseController
             'nama_lab' => $this->request->getVar('nama_lab'),
             'keperluan' => $this->request->getVar('keperluan'),
             'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
+            'barang_pinjam' => $this->request->getVar('barang_pinjam'),
+            'foto' => $this->request->getVar('foto')
 
         ]);
 

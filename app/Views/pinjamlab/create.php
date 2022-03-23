@@ -6,7 +6,7 @@
         <div class="col-8">
             <h4 class="my-3">Form Tambah Data</h4>
 
-            <form action="/pinjamlab/save" method="post">
+            <form action="/pinjamlab/save" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
@@ -32,14 +32,14 @@
                 <div class="row mb-3">
                     <label for="tanggal_peminjamam" class="col-sm-2 col-form-label">Tanggal Peminjaman</label>
                     <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                        <input placeholder="Select date" type="text" id="tanggal_pengembalian" class="form-control" name="tanggal_peminjaman" value="<?= old('tanggal_peminjaman'); ?>">
+                        <input placeholder="Select date" type="date" id="tanggal_pengembalian" class="form-control" name="tanggal_peminjaman" value="<?= old('tanggal_peminjaman'); ?>">
                         <i class="fas fa-calendar input-prefix"></i>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="tanggal_peminjamam" class="col-sm-2 col-form-label">Tanggal Peminjaman</label>
                     <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                        <input placeholder="Select date" type="text" id="tanggal_pengembalian" class="form-control" name="tanggal_pengembalian" value="<?= old('tanggal_pengembalian'); ?>">
+                        <input placeholder="Select date" type="date" id="tanggal_pengembalian" class="form-control" name="tanggal_pengembalian" value="<?= old('tanggal_pengembalian'); ?>">
                         <i class="fas fa-calendar input-prefix"></i>
                     </div>
                 </div>
@@ -70,7 +70,8 @@
                 <div class="row mb-3">
                     <label for="waktu_peminjaman" class="col-sm-2 col-form-label">Waktu Peminjaman</label>
                     <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                        <input placeholder="Select date" type="text" id="waktu_peminjaman" class="form-control" name="waktu_peminjaman" value="<?= old('waktu_peminjaman'); ?>">
+                        <input placeholder="Select date" type="date" id="example" class="form-control">
+
                         <i class="fas fa-calendar input-prefix"></i>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="foto" class="col-sm-2 col-form-label">Foto</label>
+                    <label for="foto" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('foto')) ?
                                                                     'is-invalid' : ''; ?>" id="foto" name="foto" value="<?= old('foto'); ?>">
@@ -97,9 +98,17 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Tambah Data</button>
-            </form>
+                <!-- <div class="row mb-3">
+                    <label for="foto" class="col-sm-2 col-form-label">Foto</label>
+                    <div class="col-sm-10">
+                        <div class="custom-file">
+                            <input class="form-control" type="file" id="foto">
+                        </div>
+                   </div> -->
         </div>
+        <button type="submit" class="btn btn-primary">Tambah Data</button>
+        </form>
     </div>
+</div>
 </div>
 <?= $this->endSection(); ?>
