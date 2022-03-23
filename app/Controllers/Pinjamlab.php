@@ -22,7 +22,7 @@ class Pinjamlab extends BaseController
 
         ];
 
-        
+
         return view('pinjamlab/index', $data);
     }
 
@@ -66,53 +66,53 @@ class Pinjamlab extends BaseController
                 ]
             ],
 
-                'tanggal_pengembalian' => [
-                    'rules' => 'required[pinjamlab.tanggal_pengembalian]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
+            'tanggal_pengembalian' => [
+                'rules' => 'required[pinjamlab.tanggal_pengembalian]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
 
-                'nama_lab' => [
-                    'rules' => 'required[pinjamlab.nama_lab]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
+            'nama_lab' => [
+                'rules' => 'required[pinjamlab.nama_lab]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
 
-                'keperluan' => [
-                    'rules' => 'required[pinjamlab.keperluan]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
+            'keperluan' => [
+                'rules' => 'required[pinjamlab.keperluan]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
 
-                'waktu_pemijaman' => [
-                    'rules' => 'required[pinjamlab.waktu_pemijaman]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
+            'waktu_pemijaman' => [
+                'rules' => 'required[pinjamlab.waktu_pemijaman]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
 
-                'barang_pinjam' => [
-                    'rules' => 'required[pinjamlab.barang_pinjam]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
+            'barang_pinjam' => [
+                'rules' => 'required[pinjamlab.barang_pinjam]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
 
-                'foto' => [
-                    'rules' => 'required[pinjamlab.foto]',
-                    'errors' => [
-                        'required' => '{field} pinjamlab harus diisi'
-                    ]
-                ],
-    
-    
-    
-    
-    
-    
+            'foto' => [
+                'rules' => 'required[pinjamlab.foto]',
+                'errors' => [
+                    'required' => '{field} pinjamlab harus diisi'
+                ]
+            ],
+
+
+
+
+
+
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('/pinjamlab/create')->withInput()->with('validation', $validation);
@@ -165,7 +165,7 @@ class Pinjamlab extends BaseController
             'nama_lab' => $this->request->getVar('nama_lab'),
             'keperluan' => $this->request->getVar('keperluan'),
             'waktu_peminjaman' => $this->request->getVar('waktu_peminjaman'),
-            
+
         ]);
 
 
