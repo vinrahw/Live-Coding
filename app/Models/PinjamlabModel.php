@@ -11,7 +11,7 @@ class PinjamlabModel extends Model
     protected $primarykey = 'id';
 
     protected $useTimestamps = true;
-    protected $allowedFields = [''];
+    protected $allowedFields = ['nama', 'nim', 'tanggal_peminjaman', 'tanggal_pengembalian', 'nama_lab', 'keperluan', 'waktu_peminjaman', 'barang_pinjam', 'foto'];
 
     public function getPinjamlab($id = false)
     {
