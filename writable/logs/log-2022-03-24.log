@@ -58,3 +58,10 @@ CRITICAL - 2022-03-24 03:16:46 --> Call to a member function send() on null
 #3 C:\xampp\htdocs\Live-Coding\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #4 C:\xampp\htdocs\Live-Coding\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #5 {main}
+CRITICAL - 2022-03-24 03:38:28 --> Call to a member function send() on null
+#0 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptRegister()
+#1 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#2 C:\xampp\htdocs\Live-Coding\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\Live-Coding\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\Live-Coding\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
