@@ -79,18 +79,18 @@ class Services extends BaseService
 	 *
 	 * @return ActivatorInterface
 	 */
-	public static function activator(AuthConfig $config = null, bool $getShared = true): ActivatorInterface
-	{
-		if ($getShared)
-		{
-			return self::getSharedInstance('activator', $config);
-		}
+	// public static function activator(AuthConfig $config = null, bool $getShared = true): ActivatorInterface
+	// {
+	// 	if ($getShared)
+	// 	{
+	// 		return self::getSharedInstance('activator', $config);
+	// 	}
 
-		$config = $config ?? config(AuthConfig::class);
-		$class	= $config->requireActivation ?? UserActivator::class;
+	// 	$config = $config ?? config(AuthConfig::class);
+	// 	$class	= $config->requireActivation ?? UserActivator::class;
 
-		return new $class($config);
-	}
+	// 	return new $class($config);
+	// }
 
 	/**
 	 * Returns an instance of the Resetter.
@@ -100,16 +100,16 @@ class Services extends BaseService
 	 *
 	 * @return ResetterInterface
 	 */
-	public static function resetter(AuthConfig $config = null, bool $getShared = true): ResetterInterface
-	{
-		if ($getShared)
-		{
-			return self::getSharedInstance('resetter', $config);
-		}
+	// public static function resetter(AuthConfig $config = null, bool $getShared = true): ResetterInterface
+	// {
+	// 	if ($getShared)
+	// 	{
+	// 		return self::getSharedInstance('resetter', $config);
+	// 	}
 
-		$config = $config ?? config(AuthConfig::class);
-		$class	= $config->activeResetter ?? EmailResetter::class;
+	// 	$config = $config ?? config(AuthConfig::class);
+	// 	$class	= $config->activeResetter ?? EmailResetter::class;
 
-		return new $class($config);
-	}
+	// 	return new $class($config);
+	// }
 }

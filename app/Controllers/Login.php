@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Pages extends BaseController
+class Login extends BaseController
 {
     public function index()
     {
@@ -10,8 +10,6 @@ class Pages extends BaseController
             'title' => 'Home | Peminjaman Lab'
         ];
 
-        return view('pages/login', $data);
+        return view('auth/login', $data);
     }
-
-  
 }
